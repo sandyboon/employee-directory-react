@@ -23,14 +23,14 @@ function SearchBar(props) {
           className="btn btn-large"
           onClick={props.handleDescSort}
         >
-          <i class="fa fa-sort-alpha-desc" aria-hidden="true"></i>
+          <i className="fa fa-sort-alpha-desc" aria-hidden="true"></i>
         </button>
         <button
           id="sortAscBtn"
           className="btn btn-large"
           onClick={props.handleAscSort}
         >
-          <i class="fa fa-sort-alpha-asc" aria-hidden="true"></i>
+          <i className="fa fa-sort-alpha-asc" aria-hidden="true"></i>
         </button>
       </form>
     </>

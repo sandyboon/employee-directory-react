@@ -11,6 +11,9 @@ function ImageCard(props) {
         <div>
           <p className="card-text">Department: {props.emp.department}</p>
         </div>
+        <div>
+          <p className="card-text">Office: {props.emp.officeLocation}</p>
+        </div>
       </div>
     </div>
   );

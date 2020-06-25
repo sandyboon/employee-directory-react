@@ -6,10 +6,14 @@ import AllEmployees from '../utils/empdata.json';
 import useDebounce from '../utils/debounceHook';
 
 function MainContent(props) {
-  const [employees, setEmployees] = useState(
-    getAllEmployees(defaultSearchCriteria)
-  );
   const [searchText, setSearchText] = useState('');
+  const [employees, setEmployees] = useState(
+    fetchEmployees(
+      searchText,
+      props.searchCriteria ? props.searchCriteria : defaultSearchCriteria
+    )
+  );
+
   const debouncedSearchTerm = useDebounce(searchText, 500);
 
   useEffect(() => {
@@ -19,7 +23,7 @@ function MainContent(props) {
       ? props.searchCriteria
       : defaultSearchCriteria;
     if (!debouncedSearchTerm) {
-      setEmployees(getAllEmployees(debouncedSearchTerm, searchCriteria));
+      setEmployees(getAllEmployees(searchCriteria));
     } else {
       let emps = fetchEmployees(debouncedSearchTerm, searchCriteria);
       setEmployees(emps);
@@ -59,18 +63,26 @@ function MainContent(props) {
 
 function fetchEmployees(searchText, searchCriteria) {
   // this is where we do stuff to fetch employees
-  let filteredEmps = getAllEmployees(searchCriteria).filter((emp) => {
-    return emp.name.includes(searchText);
-  });
+  let allEmps = getAllEmployees(searchCriteria);
+  let filteredEmps;
+  if (searchText) {
+    filteredEmps = allEmps.filter((emp) => {
+      return emp.name.toLowerCase().includes(searchText.toLowerCase());
+    });
+  } else {
+    filteredEmps = allEmps;
+  }
   console.log('fileted emps ' + filteredEmps);
   return filteredEmps;
 }
 
 function getAllEmployees(searchCriteria) {
   let emps = AllEmployees;
-  emps.filter((emp) => checkIfEmployeesMatchesCriteria(emp, searchCriteria));
-  console.log(emps);
-  return emps;
+  let filteredemps = emps.filter((emp) =>
+    checkIfEmployeesMatchesCriteria(emp, searchCriteria)
+  );
+  console.log(filteredemps);
+  return filteredemps;
 }
 
 function checkIfEmployeesMatchesCriteria(emp, searchCriteria) {
@@ -79,7 +91,9 @@ function checkIfEmployeesMatchesCriteria(emp, searchCriteria) {
     if (!isMatch) break;
     if (emp.hasOwnProperty(criteria)) {
       //Now match the property value
-      isMatch = emp[criteria] === searchCriteria[criteria];
+      isMatch =
+        emp[criteria] === searchCriteria[criteria] ||
+        searchCriteria[criteria].trim().length === 0;
     } else {
       isMatch = false;
     }
