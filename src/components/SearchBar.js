@@ -3,34 +3,41 @@ import React from 'react';
 function SearchBar(props) {
   return (
     <>
-      <form>
+      <form className="w-100 mb-5">
         <input
           id="searchInput"
           type="text"
           placeholder="search by employee name"
           value={props.search}
           onChange={props.handleInputChange}
+          className="form-control form-control-lg w-75 ml-3"
+          style={{ display: 'inline' }}
         ></input>
-        {/* <button
-          id="searchBtn"
-          className="btn btn-large"
-          onClick={props.handleSearch}
-        >
-          <i class="fa fa-search" aria-hidden="true"></i>
-        </button> */}
         <button
-          id="sortDescBtn"
-          className="btn btn-large"
-          onClick={props.handleDescSort}
+          id="sortByNameBtn"
+          className="btn btn-large pb-2"
+          style={{ display: 'inline' }}
+          onClick={props.handleNameSort}
+          title="Sort by Name"
         >
-          <i className="fa fa-sort-alpha-desc" aria-hidden="true"></i>
+          <i
+            className="fa fa-sort-alpha-asc fa-2x"
+            style={{ display: 'inline' }}
+            aria-hidden="true"
+          ></i>
         </button>
         <button
-          id="sortAscBtn"
-          className="btn btn-large"
-          onClick={props.handleAscSort}
+          id="sortByDeptBtn"
+          className="btn btn-large pb-2"
+          style={{ display: 'inline' }}
+          onClick={props.handleLocationSort}
+          title="Sort by Department"
         >
-          <i className="fa fa-sort-alpha-asc" aria-hidden="true"></i>
+          <i
+            className="fa fa-sort-amount-asc fa-2x"
+            style={{ display: 'inline' }}
+            aria-hidden="true"
+          ></i>
         </button>
       </form>
     </>

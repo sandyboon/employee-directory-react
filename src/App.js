@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Sidebar from './components/Sidebar';
 import MainContent from './components/MainContent';
 import { searchCriteria as defaultSearchCriteria } from './utils/searchCriteria';
@@ -23,6 +23,10 @@ function App() {
   const [searchDepartment, setSearchDepartment] = useState(
     defaultSearchCriteria.department
   );
+
+  useEffect(() => {
+    console.log('CHanging something');
+  });
 
   const handleLocationSelection = (event) => {
     if (event.target.innerText === searchLocation) {
@@ -70,7 +74,7 @@ function App() {
 
   return (
     <div className="container-fluid">
-      <h1 className="text-center">Employee Directory</h1>
+      <h1 className="text-center pt-3">Employee Directory</h1>
       <div className="row mt-5">
         <div className="col-3">
           <Sidebar
