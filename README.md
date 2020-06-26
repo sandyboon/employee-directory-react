@@ -1,68 +1,58 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Employee Directory
 
-## Available Scripts
+A simple employee directory app made with Create-React-APP. It lets the user see all the employees, filter them by office location and sort by employee names or the departments.
 
-In the project directory, you can run:
+![node](https://img.shields.io/node/v/latest?style=plastic)
+![code size](https://img.shields.io/github/languages/code-size/sandyboon/employee-directory-react)
+![last comit](https://img.shields.io/github/last-commit/sandyboon/employee-directory-react)
+![licenseInformation](https://img.shields.io/apm/l/vim-mode)
 
-### `npm start`
+## Table of Contents
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [Description](#Description)
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [Credits](#Credits)
+- [License](#License)
+- [Contributing](#Contributing)
+- [Tests](#Tests)
+- [Questions](#Questions)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Description
 
-### `npm test`
+A simple create-react-app that shows a static employee directory which user can filter or sort. There is no back-end for this app, everything is handled on front-end using react.
+Employee data itself is generated using <code>npm faker</code> package. The app is deployed using github pages at -
+https://sandyboon.github.io/deployedEmployeeDirectory/
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+To set-up the Web-app on your local machine, follow these steps -
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Run <code>npm install</code>.
+- Run <code>npm start</code>.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Usage
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Run <code>npm start</code> .
 
-### `npm run eject`
+![how to use](./public/assets/empdir.gif)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Credits
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+sandyboon(https://github.com/sandyboon)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## License
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Licensed under the MIT license.
 
-## Learn More
+## Contributing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Contribution to this project is not permitted at this moment.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Tests
 
-### Code Splitting
+There are no tests at this moment.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Questions
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+### Email : sandy.boon@gmail.com
