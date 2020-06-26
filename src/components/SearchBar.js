@@ -3,7 +3,7 @@ import React from 'react';
 function SearchBar(props) {
   return (
     <>
-      <form className="w-100 mb-5">
+      <div className="w-100 mb-5">
         <input
           id="searchInput"
           type="text"
@@ -39,7 +39,7 @@ function SearchBar(props) {
             aria-hidden="true"
           ></i>
         </button>
-      </form>
+      </div>
     </>
   );
 }
